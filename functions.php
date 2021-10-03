@@ -6,6 +6,16 @@
  *
  * @package tera_at
  */
+add_action('init',function(){
+	register_post_type('item',[
+		'label' => '商品',
+		'public' => true,
+		'menu_position' => 10,
+		'menu_icon' => 'dashicons-store',
+		'supports' => ['thumbnail', 'title', 'editor']
+	]);
+});
+
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
