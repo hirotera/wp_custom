@@ -14,6 +14,14 @@ add_action('init',function(){
 		'menu_icon' => 'dashicons-store',
 		'supports' => ['thumbnail', 'title', 'editor'],
 		'has_archive' => true,
+		'hierarchical' => true,
+		'show_in_rest' => true,
+	]);
+
+	register_taxonomy('genre','item', [
+		'label' => '商品ジャンル',
+		'hierarchical' => true,
+		'show_in_rest' => true, //register_post_typeで指定しているのでこちらでも指定する
 	]);
 });
 
