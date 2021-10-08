@@ -17,7 +17,16 @@ get_header();
   while (have_posts()) :
     the_post();
   ?>
-  <h1>商品詳細</h1>
+    <h1>商品詳細</h1>
+    <!-- <p><?php the_taxonomies(); ?></p> -->
+    <?php $terms = get_the_terms(get_the_ID(), 'genre') ?>
+    <?php if($terms): ?>
+    <ul>
+      <?php foreach ($terms as $term) : ?>
+        <li><a href="<?php echo get_term_link($term); ?>"><?php echo esc_html($term->name); ?></a></li>
+      <?php endforeach; ?>
+    </ul>
+    <?php endif; ?>
   <?php
     get_template_part('template-parts/content', get_post_type()); //get_post_typeで投稿の種類を取得する
 
