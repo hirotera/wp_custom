@@ -17,6 +17,14 @@ get_header();
 
     <header class="page-header">
       <hi>tera@shop</hi>
+      <?php $terms = get_terms('genre'); ?>
+      <ul class="nav">
+        <?php foreach($terms as $term): ?>
+          <li>
+            <a href="<?php get_term_link($term);?>" class="nav-link"><?php echo esc_html($term->name); ?></a>
+          </li>
+        <?php endforeach; ?>
+      </ul>
        <h2><?php the_archive_title(); ?></h2>
     </header><!-- .page-header -->
     <ul>
