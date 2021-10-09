@@ -12,7 +12,7 @@ add_action('init',function(){
 		'public' => true,
 		'menu_position' => 10,
 		'menu_icon' => 'dashicons-store',
-		'supports' => ['thumbnail', 'title', 'editor'],
+		'supports' => ['thumbnail', 'title', 'editor', 'custom-fields'],
 		'has_archive' => true,
 		'hierarchical' => true,
 		'show_in_rest' => true,
